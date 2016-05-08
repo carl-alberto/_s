@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * ensuring that all CSS & fonts still work.
  * It does not handle the customizer options, simply the frontend CSS.
  */
-class _s_Kirki {
+class _businessportfolio_Kirki {
 
 	protected static $config = array();
 	protected static $fields = array();
@@ -373,4 +373,4 @@ class _s_Kirki {
 		}
 	}
 }
-new _s_Kirki();
+new _businessportfolio_Kirki();

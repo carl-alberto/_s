@@ -20,7 +20,7 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php _s_posted_on(); ?>
+			<?php _businessportfolio_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
@@ -42,6 +42,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php _s_entry_footer(); ?>
+		<?php _businessportfolio_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

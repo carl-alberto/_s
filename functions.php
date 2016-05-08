@@ -7,7 +7,7 @@
  * @package _businessportfolio
  */
 
-if ( ! function_exists( '_s_setup' ) ) :
+if ( ! function_exists( '_businessportfolio_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,7 +15,7 @@ if ( ! function_exists( '_s_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function _s_setup() {
+function _businessportfolio_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -72,13 +72,13 @@ function _s_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( '_s_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( '_businessportfolio_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 }
 endif;
-add_action( 'after_setup_theme', '_s_setup' );
+add_action( 'after_setup_theme', '_businessportfolio_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -87,17 +87,17 @@ add_action( 'after_setup_theme', '_s_setup' );
  *
  * @global int $content_width
  */
-function _s_content_width() {
-	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 640 );
+function _businessportfolio_content_width() {
+	$GLOBALS['content_width'] = apply_filters( '_businessportfolio_content_width', 640 );
 }
-add_action( 'after_setup_theme', '_s_content_width', 0 );
+add_action( 'after_setup_theme', '_businessportfolio_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function _s_widgets_init() {
+function _businessportfolio_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', '_s' ),
 		'id'            => 'sidebar-1',
@@ -108,12 +108,12 @@ function _s_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', '_s_widgets_init' );
+add_action( 'widgets_init', '_businessportfolio_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function _s_scripts() {
+function _businessportfolio_scripts() {
 	wp_enqueue_style( '_businessportfolio-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( '_businessportfolio-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -124,7 +124,7 @@ function _s_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', '_s_scripts' );
+add_action( 'wp_enqueue_scripts', '_businessportfolio_scripts' );
 
 
 require get_template_directory() . '/inc/kirki/kirki.php';
