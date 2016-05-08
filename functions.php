@@ -126,6 +126,9 @@ function _s_scripts() {
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
+
+require get_template_directory() . '/inc/kirki/kirki.php';
+
 /**
  * Implement the Custom Header feature.
  */
@@ -144,7 +147,7 @@ require get_template_directory() . '/inc/extras.php';
 /**
  * Recommend the Kirki plugin
  */
-require get_template_directory() . '/inc/include-kirki.php';
+//require get_template_directory() . '/inc/include-kirki.php';
 
 /**
  * Load the Kirki Fallback class
@@ -160,3 +163,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load Kirki Framework
+ */
+require get_template_directory() . '/inc/kirki/kirki.php';
