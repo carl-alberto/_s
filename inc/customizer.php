@@ -1,6 +1,6 @@
 <?php
 /**
- * _s Theme Customizer.
+ * _businessportfolio Theme Customizer.
  *
  * @package _businessportfolio
  */
@@ -37,7 +37,7 @@ _businessportfolio_Kirki::add_config( '_businessportfolio_theme', array(
  * Add the typography section
  */
 _businessportfolio_Kirki::add_section( 'typography', array(
-	'title'      => esc_attr__( 'Typography', '_s' ),
+	'title'      => esc_attr__( 'Typography', '_businessportfolio' ),
 	'priority'   => 2,
 	'capability' => 'edit_theme_options',
 ) );
@@ -48,9 +48,9 @@ _businessportfolio_Kirki::add_section( 'typography', array(
 _businessportfolio_Kirki::add_field( '_businessportfolio_theme', array(
 	'type'        => 'typography',
 	'settings'    => 'body_typography',
-	'label'       => esc_attr__( 'Body Typography', '_s' ),
-	'description' => esc_attr__( 'Select the main typography options for your site.', '_s' ),
-	'help'        => esc_attr__( 'The typography options you set here apply to all content on your site.', '_s' ),
+	'label'       => esc_attr__( 'Body Typography', '_businessportfolio' ),
+	'description' => esc_attr__( 'Select the main typography options for your site.', '_businessportfolio' ),
+	'help'        => esc_attr__( 'The typography options you set here apply to all content on your site.', '_businessportfolio' ),
 	'section'     => 'typography',
 	'priority'    => 10,
 	'default'     => array(
@@ -74,9 +74,9 @@ _businessportfolio_Kirki::add_field( '_businessportfolio_theme', array(
 _businessportfolio_Kirki::add_field( '_businessportfolio_theme', array(
 	'type'        => 'typography',
 	'settings'    => 'headers_typography',
-	'label'       => esc_attr__( 'Headers Typography', '_s' ),
-	'description' => esc_attr__( 'Select the typography options for your headers.', '_s' ),
-	'help'        => esc_attr__( 'The typography options you set here will override the Body Typography options for all headers on your site (post titles, widget titles etc).', '_s' ),
+	'label'       => esc_attr__( 'Headers Typography', '_businessportfolio' ),
+	'description' => esc_attr__( 'Select the typography options for your headers.', '_businessportfolio' ),
+	'help'        => esc_attr__( 'The typography options you set here will override the Body Typography options for all headers on your site (post titles, widget titles etc).', '_businessportfolio' ),
 	'section'     => 'typography',
 	'priority'    => 10,
 	'default'     => array(

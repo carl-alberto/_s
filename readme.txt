@@ -1,4 +1,4 @@
-=== _s ===
+=== _businessportfolio ===
 
 Contributors: automattic
 Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
@@ -25,7 +25,7 @@ Hi. I'm a starter theme called _businessportfolio, or underscores, if you like. 
 
 = Does this theme support any plugins? =
 
-_s includes support for Infinite Scroll in Jetpack.
+_businessportfolio includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
