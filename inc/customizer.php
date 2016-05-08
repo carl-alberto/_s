@@ -93,3 +93,33 @@ _businessportfolio_Kirki::add_field( '_businessportfolio_theme', array(
 		),
 	),
 ) );
+
+
+/* sample kirki codes
+_businessportfolio_Kirki::add_section( 'custom_css', array(
+    'title'          => __( 'Custom CSS' ),
+    'description'    => __( 'Add custom CSS here' ),
+    'panel'          => 'test', // Not typically needed.
+    'priority'       => 160,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+
+_businessportfolio_Kirki::add_panel( 'test', array(
+    'priority'    => 10,
+    'title'       => __( 'My Title', 'textdomain' ),
+    'description' => __( 'My Description', 'textdomain' ),
+) );
+
+_businessportfolio_Kirki::add_field( 'my_config', array(
+	'settings' => 'my_setting',
+	'label'    => __( 'My custom control', 'translation_domain' ),
+	'section'  => 'custom_css',
+	'type'     => 'text',
+	'priority' => 10,
+	'default'  => 'some-default-value',
+) );
+
+// used to display values in frontend
+// $value = get_theme_mod( 'my_setting', 'default_valuess' );
+*/
