@@ -12,7 +12,7 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package _s
+ * @package _businessportfolio
  */
 
 /**
