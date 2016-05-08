@@ -44,7 +44,7 @@ function _s_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', '_s' ),
+		'primary' => esc_html__( 'Primary', '_s' ),
 	) );
 
 	/*
@@ -77,7 +77,7 @@ function _s_setup() {
 		'default-image' => '',
 	) ) );
 }
-endif; // _s_setup
+endif;
 add_action( 'after_setup_theme', '_s_setup' );
 
 /**
@@ -101,9 +101,9 @@ function _s_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', '_s' ),
 		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
+		'description'   => esc_html__( 'Add widgets here.', '_s' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
@@ -116,9 +116,9 @@ add_action( 'widgets_init', '_s_widgets_init' );
 function _s_scripts() {
 	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -140,6 +140,16 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
+
+/**
+ * Recommend the Kirki plugin
+ */
+require get_template_directory() . '/inc/include-kirki.php';
+
+/**
+ * Load the Kirki Fallback class
+ */
+require get_template_directory() . '/inc/kirki-fallback.php';
 
 /**
  * Customizer additions.
