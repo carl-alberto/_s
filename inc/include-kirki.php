@@ -40,7 +40,7 @@ if ( ! class_exists( 'Kirki' ) ) {
 					<style>
 						li#accordion-section-kirki_installer .description { display: none; }
                     			</style>
-					<p><?php printf( __( 'The Kirki Toolkit plugin is installed but not activated. Please <strong><a href="%s">activate it</a></strong> in order to take full advantage of the theme\'s options.', '_businessportfolio' ), admin_url( 'plugins.php' ) ); ?></p>
+					<p><?php printf( __( 'The Kirki Toolkit plugin is installed but not activated. Please <strong><a href="%s">activate it</a></strong> in order to take full advantage of the theme\'s options.', 'businessportfolio' ), admin_url( 'plugins.php' ) ); ?></p>
 				<?php endif;
 			}
 		}
@@ -57,7 +57,7 @@ if ( ! class_exists( 'Kirki' ) ) {
 			// Please note that the title will not be displayed.
 			$wp_customize->add_section( 'kirki_installer', array(
 				'title'       => '',
-				'description' => esc_attr__( 'If you want to take full advantage of the options this theme has to offer, please install the companion Kirki Toolkit plugin.', '_businessportfolio' ),
+				'description' => esc_attr__( 'If you want to take full advantage of the options this theme has to offer, please install the companion Kirki Toolkit plugin.', 'businessportfolio' ),
 				'priority'    => -10,
 				'capability'  => 'install_plugins',
 			) );
