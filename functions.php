@@ -125,6 +125,8 @@ add_action( 'widgets_init', '_businessportfolio_widgets_init' );
 function _businessportfolio_scripts() {
 	wp_enqueue_style( '_businessportfolio-style', get_stylesheet_uri() );
 
+	wp_enqueue_style( '_businessportfolio-style-sass-compiled', get_template_directory_uri() . '/sass/stylecomp.css' );
+
 	wp_enqueue_script( '_businessportfolio-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( '_businessportfolio-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -188,3 +190,8 @@ require get_template_directory() . '/inc/kirki/kirki.php';
  * Load My Theme Customization
  */
 require get_template_directory() . '/inc/theme-customization.php';
+
+/**
+ * Load Homepage Slider Custom Post Type
+ */
+require get_template_directory() . '/inc/theme-homeslider.php';

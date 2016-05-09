@@ -60,7 +60,7 @@ _businessportfolio_Kirki::add_field( '_businessportfolio_theme', array(
 		'font-size'      => '16px',
 		'line-height'    => '1.5',
 		// 'letter-spacing' => '0',
-		'color'          => '#333333',
+		'color'          => '#fff',
 	),
 	'output' => array(
 		array(
@@ -86,7 +86,7 @@ _businessportfolio_Kirki::add_field( '_businessportfolio_theme', array(
 		// 'font-size'      => '16px',
 		// 'line-height'    => '1.5',
 		// 'letter-spacing' => '0',
-		// 'color'          => '#333333',
+	 'color'          => '#fff',
 	),
 	'output' => array(
 		array(
@@ -143,6 +143,29 @@ Kirki::add_field( 'fluid_toggle', array(
 	'section'     => 'bootstrap_settings',
 	'default'     => '1',
 	'priority'    => 10,
+) );
+
+Kirki::add_field( 'fluid_toggle', array(
+	'type'        => 'toggle',
+	'settings'    => 'fluid_toggle',
+	'label'    => __( 'Turns on full width', 'businessportfolio' ),
+	'section'     => 'bootstrap_settings',
+	'default'     => '1',
+	'priority'    => 10,
+) );
+
+Kirki::add_field( 'logo_align', array(
+	'type'        => 'radio',
+	'settings'    => 'logo_align',
+	'label'       => __( 'Logo Alignment', 'businessportfolio' ),
+	'section'     => 'bootstrap_settings',
+	'default'     => 'left',
+	'priority'    => 15,
+	'choices'     => array(
+		'left'   => 'left',
+		'center' => 'center',
+		'right'  => 'right',
+	),
 ) );
 
 _businessportfolio_Kirki::add_section( 'social_links', array(
