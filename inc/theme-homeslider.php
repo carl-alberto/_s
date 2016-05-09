@@ -35,7 +35,7 @@ function homeslider_post_type() {
 		'label'                 => __( 'Home Slider', 'businessportfolio' ),
 		'description'           => __( 'Home Page Slider Images', 'businessportfolio' ),
 		'labels'                => $labels,
-		'supports'              => array( 'editor', 'title',  'thumbnail', ),
+		'supports'              => array( 'editor', 'title',  'thumbnail', 'page-attributes', ),
 		'taxonomies'            => array( '' ),
 		'hierarchical'          => false,
 		'public'                => true,
@@ -62,9 +62,7 @@ add_action( 'manage_homeslider_posts_custom_column' , 'custom_homeslider_columns
 
 function set_custom_edit_homeslider_columns( $columns ) {
 
-    $columns['title'] = __( 'Image Title' );
-    //$columns['thumbnail'] = __( 'thumbnail' );
-
+    $columns['title'] = __( 'Image Title', 'businessportfolio' );
     return $columns;
 }
 
@@ -75,10 +73,9 @@ function custom_homeslider_columns( $column, $post_id ) {
             echo get_post_meta( $post_id, '_quote_post_pairname', true );
             break;
 
-        case 'thumbnail' :
+        case 'Featured Image' :
             echo get_post_meta( $post_id, 'thumbnail', true );
             break;
-
     }
 }
 
@@ -93,10 +90,12 @@ function homeslider_get_featured_image($post_ID) {
 }
 
 // ADD NEW COLUMN
+
 function homeslider_columns_head($defaults) {
     $defaults['featured_image'] = 'Featured Image';
     return $defaults;
 }
+
 
 // SHOW THE FEATURED IMAGE
 function homeslider_columns_content($column_name, $post_ID) {
@@ -110,3 +109,39 @@ function homeslider_columns_content($column_name, $post_ID) {
 
 add_filter('manage_posts_columns', 'homeslider_columns_head');
 add_action('manage_posts_custom_column', 'homeslider_columns_content', 10, 2);
+
+
+
+
+
+function add_new_homeslider_column($homeslider_columns) {
+  $homeslider_columns['menu_order'] = "Order";
+  return $homeslider_columns;
+}
+add_action('manage_edit-homeslider_columns', 'add_new_homeslider_column');
+
+/**
+* show custom order column values
+*/
+function show_order_column($name){
+  global $post;
+
+  switch ($name) {
+    case 'menu_order':
+      $order = $post->menu_order;
+      echo $order;
+      break;
+   default:
+      break;
+   }
+}
+add_action('manage_homeslider_posts_custom_column','show_order_column');
+
+/**
+* make column sortable
+*/
+function order_column_register_sortable($columns){
+  $columns['menu_order'] = 'menu_order';
+  return $columns;
+}
+add_filter('manage_edit-homeslider_sortable_columns','order_column_register_sortable');
