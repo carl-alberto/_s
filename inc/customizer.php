@@ -40,6 +40,7 @@ _businessportfolio_Kirki::add_section( 'typography', array(
 	'title'      => esc_attr__( 'Typography', 'businessportfolio' ),
 	'priority'   => 2,
 	'capability' => 'edit_theme_options',
+	'panel'      => 'theme_customization',
 ) );
 
 /**
@@ -77,7 +78,7 @@ _businessportfolio_Kirki::add_field( '_businessportfolio_theme', array(
 	'label'       => esc_attr__( 'Headers Typography', 'businessportfolio' ),
 	'description' => esc_attr__( 'Select the typography options for your headers.', 'businessportfolio' ),
 	'help'        => esc_attr__( 'The typography options you set here will override the Body Typography options for all headers on your site (post titles, widget titles etc).', 'businessportfolio' ),
-	'section'     => 'typography',
+	'section'     => 'theme_customization',
 	'priority'    => 10,
 	'default'     => array(
 		'font-family'    => 'Roboto',
@@ -94,32 +95,78 @@ _businessportfolio_Kirki::add_field( '_businessportfolio_theme', array(
 	),
 ) );
 
+_businessportfolio_Kirki::add_panel( 'theme_customization', array(
+    'priority'    => 10,
+    'title'       => __( 'Theme Customization', 'businessportfolio' ),
+    'description' => __( 'Add various theme customization', 'businessportfolio' ),
+) );
 
-/* sample kirki codes
-_businessportfolio_Kirki::add_section( 'custom_css', array(
-    'title'          => __( 'Custom CSS' ),
-    'description'    => __( 'Add custom CSS here' ),
-    'panel'          => 'test', // Not typically needed.
+_businessportfolio_Kirki::add_section( 'theme_whitelabel', array(
+    'title'          => __( 'Admin White Label' ),
+    'description'    => __( 'Customize your admin' ),
+    'panel'          => 'theme_customization',
     'priority'       => 160,
     'capability'     => 'edit_theme_options',
-    'theme_supports' => '', // Rarely needed.
+    'theme_supports' => '',
 ) );
 
-_businessportfolio_Kirki::add_panel( 'test', array(
-    'priority'    => 10,
-    'title'       => __( 'My Title', 'textdomain' ),
-    'description' => __( 'My Description', 'textdomain' ),
+Kirki::add_field( 'use_logo_in_admin_login', array(
+	'type'        => 'toggle',
+	'settings'    => 'use_logo_in_admin_login',
+	'label'    => __( 'Use Logo in admin Login & hide WP logo', 'businessportfolio' ),
+	'section'     => 'theme_whitelabel',
+	'default'     => '1',
+	'priority'    => 10,
 ) );
 
-_businessportfolio_Kirki::add_field( 'my_config', array(
-	'settings' => 'my_setting',
-	'label'    => __( 'My custom control', 'translation_domain' ),
-	'section'  => 'custom_css',
+_businessportfolio_Kirki::add_field( 'admin_footer_text_replace', array(
+	'settings' => 'admin_footer_text_replace',
+	'label'    => __( 'Replace Admin Text', 'businessportfolio' ),
+	'section'  => 'theme_whitelabel',
+	'type'     => 'text',
+	'priority' => 12,
+	'default'  => 'Business Portfolio Theme',
+) );
+
+_businessportfolio_Kirki::add_section( 'bootstrap_settings', array(
+    'title'          => __( 'Bootstrap Settings' ),
+    'panel'          => 'theme_customization',
+    'priority'       => 20,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '',
+) );
+
+Kirki::add_field( 'fluid_toggle', array(
+	'type'        => 'toggle',
+	'settings'    => 'fluid_toggle',
+	'label'    => __( 'Turns on full width', 'businessportfolio' ),
+	'section'     => 'bootstrap_settings',
+	'default'     => '1',
+	'priority'    => 10,
+) );
+
+_businessportfolio_Kirki::add_section( 'social_links', array(
+    'title'          => __( 'Social Links' ),
+    'panel'          => 'theme_customization',
+    'priority'       => 40,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '',
+) );
+
+_businessportfolio_Kirki::add_field( 'social_links', array(
+	'settings' => 'social_link_fb',
+	'label'    => __( 'Facebook', 'businessportfolio' ),
+	'section'  => 'social_links',
 	'type'     => 'text',
 	'priority' => 10,
-	'default'  => 'some-default-value',
+	'default'  => 'twitter.com',
 ) );
 
-// used to display values in frontend
-// $value = get_theme_mod( 'my_setting', 'default_valuess' );
-*/
+_businessportfolio_Kirki::add_field( 'social_links', array(
+	'settings' => 'social_link_twitter',
+	'label'    => __( 'Twitter', 'businessportfolio' ),
+	'section'  => 'social_links',
+	'type'     => 'text',
+	'priority' => 10,
+	'default'  => 'fb.com',
+) );

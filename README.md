@@ -8,6 +8,16 @@ Version 0.1
 -Kirki v2.3.2
 -Bootstrap v3.3.6
 -FontAwesome 4.6.2
+-Custom Logo
+-Logo Alignment
+-Custom footer
+-Typography from Google fonts
+-Social Links using FontAwesome Social icons
+
+-White label Admin features
+-Use Logo in admin Login
+-Replace Admin Footer Text
+
 
 
 ========================================================================

@@ -183,3 +183,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Kirki Framework
  */
 require get_template_directory() . '/inc/kirki/kirki.php';
+
+/**
+ * Load My Theme Customization
+ */
+require get_template_directory() . '/inc/theme-customization.php';

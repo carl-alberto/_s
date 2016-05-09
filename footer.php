@@ -14,7 +14,7 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="container">
+		<div class="container<?php echo get_fluid_toggle() ?>">
 			<div class="site-info">
 	      <?php
 	      if ( is_active_sidebar( 'footer-1' ) ) {
