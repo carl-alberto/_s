@@ -163,7 +163,7 @@ if ( ! class_exists( 'Kirki_l10n' ) ) {
 				'color'                 => esc_attr__( 'Color', 'kirki' ),
 				'add-image'             => esc_attr__( 'Add Image', 'kirki' ),
 				'change-image'          => esc_attr__( 'Change Image', 'kirki' ),
-				'no-image-selected'     => esc_attr__( 'No Image Selected', 'kirki' ),
+				'no-image-selected'     => esc_attr__( 'No Image Selected', 'businessportfolio' ),
 				'add-file'              => esc_attr__( 'Add File', 'kirki' ),
 				'change-file'           => esc_attr__( 'Change File', 'kirki' ),
 				'no-file-selected'      => esc_attr__( 'No File Selected', 'kirki' ),

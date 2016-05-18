@@ -18,7 +18,7 @@ function _businessportfolio_wpcom_setup() {
 	// Set theme colors for third party services.
 	if ( ! isset( $themecolors ) ) {
 		$themecolors = array(
-			'bg'     => '',
+			'bg'     => '#000',
 			'border' => '',
 			'text'   => '',
 			'link'   => '',

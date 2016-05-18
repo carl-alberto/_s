@@ -194,4 +194,3 @@ require get_template_directory() . '/inc/theme-customization.php';
 /**
  * Load Homepage Slider Custom Post Type
  */
-require get_template_directory() . '/inc/theme-homeslider.php';
