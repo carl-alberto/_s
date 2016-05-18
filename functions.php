@@ -125,8 +125,6 @@ add_action( 'widgets_init', '_businessportfolio_widgets_init' );
 function _businessportfolio_scripts() {
 	wp_enqueue_style( '_businessportfolio-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( '_businessportfolio-style-sass-compiled', get_template_directory_uri() . '/sass/stylecomp.css' );
-
 	wp_enqueue_script( '_businessportfolio-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( '_businessportfolio-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -136,6 +134,8 @@ function _businessportfolio_scripts() {
 	wp_enqueue_script( '_businessportfolio-bootstrap_js', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', array('jquery'), '', true );
 
 	wp_enqueue_style( '_businessportfolio-font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css' );
+
+	wp_enqueue_style( '_businessportfolio-style-sass-compiled', get_template_directory_uri() . '/sass/stylecomp.css' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
