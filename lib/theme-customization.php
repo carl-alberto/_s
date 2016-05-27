@@ -175,7 +175,7 @@ function businessportfolio_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'businessportfolio_customize_register', 11 );
 
 /**
- * Registers color schemes for Twenty Sixteen.
+ * Registers color schemes for Business Portfolio.
  *
  * Can be filtered with {@see 'businessportfolio_color_schemes'}.
  *
@@ -352,7 +352,7 @@ function businessportfolio_color_scheme_css() {
 	$color_scheme = businessportfolio_get_color_scheme();
 
 	// Convert main text hex color to rgba.
-	$color_textcolor_rgb = businessportfolio_hex2rgb( $color_scheme[3] );
+//	$color_textcolor_rgb = businessportfolio_hex2rgb( $color_scheme[3] );
 
 	// If the rgba values are empty return early.
 	if ( empty( $color_textcolor_rgb ) ) {
@@ -426,8 +426,8 @@ function businessportfolio_get_color_scheme_css( $colors ) {
 	}
 
 	/* Page Background Color */
-	.site {
-		background-color: {$colors['page_background_color']};
+	body {
+		background-color: {$colors['page_background_color']} !important;
 	}
 
 	mark,
@@ -924,7 +924,7 @@ function businessportfolio_main_text_color_css() {
 	}
 
 	// Convert main text hex color to rgba.
-	$main_text_color_rgb = businessportfolio_hex2rgb( $main_text_color );
+	//$main_text_color_rgb = businessportfolio_hex2rgb( $main_text_color );
 
 	// If the rgba values are empty return early.
 	if ( empty( $main_text_color_rgb ) ) {
@@ -1219,4 +1219,18 @@ add_action( 'wp_before_admin_bar_render', 'businessportfolio_remove_wp_logo' );
 
 function businessportfolio_remove_footer_admin () {
 	echo "Business Portfolio Theme";
+}
+
+function remove_menus () {
+global $menu;
+                // We define which menu/submenu items we want to restrict
+        $restricted = array(__('Users'),__('Profile'));
+        end ($menu);
+        while (prev($menu)){
+            $value = explode(' ',$menu[key($menu)][0]);
+            if(in_array($value[0] != NULL?$value[0]:"" , $restricted)){unset($menu[key($menu)]);}
+        }
+}
+if ( current_user_can( 'edit_users' ) ) {
+add_action('admin_menu', 'remove_menus');
 }
